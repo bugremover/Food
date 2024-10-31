@@ -1,5 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
+dotenv.config()
 const app =express()
 
 app.get('/',(req,res) =>{
@@ -9,7 +10,7 @@ app.get('/',(req,res) =>{
 app.get('/login',(req,res) =>{
     res.send("Wassup Login page")
 })
-const port = process.env.PORT || 3000;
-app.listen(port,()=>{
+const port = process.env.PORT;
+app.listen( port,()=>{
     console.log(`app listening at ${port}`)
 })
